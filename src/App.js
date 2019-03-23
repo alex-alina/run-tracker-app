@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
-
-import store from './store';
-import {Provider} from 'react-redux';
-import { Route } from 'react-router-dom';
 import './App.css';
-import Home from './components/Home'
+import store from './store';
+import { Provider } from 'react-redux';
+import { Route } from 'react-router-dom';
+import { theme } from './AppStyles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { MuiThemeProvider } from '@material-ui/core/styles';
+
+import Home from './components/Home';
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div>
-          <Route path="/" exact component={Home} />
-        </div>
+        <MuiThemeProvider theme={theme}>
+          <div className="App">
+            <CssBaseline />
+            <Route path="/" exact component={Home} />
+          </div>
+        </MuiThemeProvider>
       </Provider>
     );
   }
