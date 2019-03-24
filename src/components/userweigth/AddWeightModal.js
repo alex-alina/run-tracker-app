@@ -31,9 +31,11 @@ class AddWeightModal extends PureComponent {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.onSubmit(true);
+  
+    this.props.onSubmit(this.state.weight, this.state.date);
     this.setState({
-      weight: null,
+      open: false,
+      weight: "",
       date: "",
     });
   }
@@ -51,14 +53,14 @@ class AddWeightModal extends PureComponent {
           onClose={this.handleClose}
         >
           <DialogContent>
-            <ValidatorForm ref="form" onSubmit={this.handleSubmit} className={classes.form} autocomplete="off" noValidate>
+            <ValidatorForm ref="form" onSubmit={this.handleSubmit} className={classes.form} autoComplete="off" noValidate>
               <TextValidator
                 required
                 id="weight"
                 label="Weight(kg)"
                 type="number"
                 name="weight"
-                value={this.state.weight || null}
+                value={this.state.weight || ""}
                 onChange={this.handleChange}
                 placeholder="Enter weight"
                 style={{ margin: 12 }}
@@ -69,7 +71,7 @@ class AddWeightModal extends PureComponent {
                   shrink: true,
                 }}
                 className={classes.textField}
-                autocomplete="off"
+                autoComplete="off"
                 validators={['required', 'isNumber']}
                 errorMessages={['Required field', 'Please insert a number']}
               />

@@ -14,6 +14,30 @@ export const styles = theme => ({
       paddingBottom: theme.spacing.unit * 10,
     },
   },
+  welcome: {
+    marginTop: theme.spacing.unit * 3,
+    marginBottom: theme.spacing.unit * 7,
+  },
+  positionBtns: {
+    width: '80%',
+    margin: 'auto',
+
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+  // positionClearBtn: {
+  //   marginLeft: '20px',
+  // },
+  weightList: {
+    width: '80%',
+    height: 'auto',
+    minHeight:'200px',
+    margin: 'auto',
+    marginTop: theme.spacing.unit * 3,
+    borderRadius: '4px',
+    backgroundColor: theme.palette.secondary.main,
+  },
+ 
   userLi: {
     width: '80%',
     display: 'flex',
