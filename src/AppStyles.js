@@ -2,10 +2,16 @@ import { createMuiTheme } from '@material-ui/core/styles';
 export const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#f9a825',
+      main: '#ffb300',
+      light: '#ffe54c',
+      dark: '#c68400',
+      contrastText: '#000000',
     },
     secondary: {
-      main: '#81d4fa',
+      main: '#0277bd',
+      light: '#58a5f0',
+      dark: '#004c8c',
+      contrastText: '#ffffff',
     },
   },
   typography: {
@@ -16,13 +22,8 @@ export const theme = createMuiTheme({
     useNextVariants: true,
   },
   overrides: {
-    MuiDivider: {
-      light: {
-        backgroundColor: '#ffffff8C',
-      }
-    },
-    MuiListItemText: {
-      primary: {
+    MuiTypography: {
+      root: {
         color: '#fff',
       }
     },
@@ -30,6 +31,7 @@ export const theme = createMuiTheme({
       button: {
         paddingTop: '10px',
         paddingBottom: '10px',
+        backgroundColor:' #0277bd',
       },
       root: {
         paddingTop: '6px',
@@ -38,22 +40,11 @@ export const theme = createMuiTheme({
     },
     MuiAvatar: {
       root: {
-        width: '34px',
-        height: '34px',
+        width: '50px',
+        height: '50px',
         backgroundColor: '#fff',
+        marginRight: '20px',
       },
-      colorDefault: {
-        backgroundColor: '#fff',
-        '&:hover': {
-          backgroundColor: '#99cc60',
-        },
-      }
-    },
-    MuiIcon: {
-      root: {
-        fontSize: '20px',
-        width: '20px',
-      }
     },
     MuiFormControlLabel: {
       labelPlacementStart: {
@@ -66,10 +57,6 @@ export const theme = createMuiTheme({
         flexDirection: 'row',
       }
     },
-    MuiPaper: {
-      elevation4: {
-        boxShadow: 'none',
-      }
-    },
+ 
   }
 });

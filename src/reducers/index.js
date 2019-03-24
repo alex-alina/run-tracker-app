@@ -1,5 +1,10 @@
 import {combineReducers} from 'redux';
+import users from './users';
+import user from './user';
+import weights from './weights';
 
 export default combineReducers({
-  // reducers will go here
+  users,
+  user,
+  weights,
 });
