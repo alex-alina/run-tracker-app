@@ -31,7 +31,6 @@ class AddWeightModal extends PureComponent {
 
   handleSubmit = (event) => {
     event.preventDefault();
-  
     this.props.onSubmit(this.state.weight, this.state.date);
     this.setState({
       open: false,

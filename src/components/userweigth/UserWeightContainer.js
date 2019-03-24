@@ -12,7 +12,7 @@ class UserWeightContainer extends PureComponent {
     if(!this.props.user) return 'Loading your data...';
     return (
       <div>
-        <UserWeightList user={this.props.user}/>
+        <UserWeightList user={this.props.user} />
       </div>
 
     );

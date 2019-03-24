@@ -1,6 +1,8 @@
 export const WEIGHT_ADDED = 'WEIGHT_ADDED';
+export const CLEAR_WEIGHTS = 'CLEAR_WEIGHTS';
+export const DELETE_WEIGHT = 'DELETE_WEIGHT';
 
-const addWeight = (userId, weight, date) => ({
+export const addWeight = (userId, weight, date) => ({
   type: WEIGHT_ADDED,
   payload: {
     userId,
@@ -9,5 +11,15 @@ const addWeight = (userId, weight, date) => ({
   }
 });
 
+export const clearList = (userId) => ({
+  type: CLEAR_WEIGHTS,
+  payload: userId
+});
 
-export default addWeight;
+export const deleteWeight = (userId, index) => ({
+  type: DELETE_WEIGHT,
+  payload: {
+    userId,
+    index,
+  }
+});
