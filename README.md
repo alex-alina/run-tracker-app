@@ -1,68 +1,44 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Weight Tracker App - Client
 
-In the project directory, you can run:
+## Demo
+[Demo on Netlify ](https://elated-archimedes-8a6390.netlify.com)
 
-### `npm start`
+## Description
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This is the client for a Weight Tracker App. When users click **Start** they are sent to a **Users' List**.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+When a user clicks on their name, they are sent to their Weight Status page, where they can add or delete weight entries.
 
-### `npm test`
+The goal of this project was to build a Single Page Application to track users weights taken at different dates and display them in a list and a graph.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Project's status: WIP**
 
-### `npm run build`
+## Tech stack
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* React
+* Material-UI
+* JavaScript
+* CSS
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Start screen and Start button
+* Users' list screen
+* User's weight tracking screen
+* Add weight, Delete weight and Clear list buttons
 
-### `npm run eject`
+## Setup
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* For the app to run properly you need to instal a JSON-server in order to serve user data from `db.json` through a REST API.
+  * The JSON-server exposes a REST API based on a JSON file.
+* Install JSON-server using `npm install -g json-server`
+* Clone the repository `git clone git@github.com:alex-alina/weight-tracker-app.git`
+* Install the dependencies using `yarn install`
+* Run the JSON-server using `json-server --delay 1000 --port 4000 db.json`
+  * Make sure the JSON server is running at all times, while your application is running.
+* Start the server using `yarn start`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+MIT Licence - Copyright &copy; 2019 - Alina Rusu.
