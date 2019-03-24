@@ -1,0 +1,50 @@
+import React, { PureComponent } from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import { styles } from './StartScreenStyles';
+
+class StartScreen extends PureComponent {
+  renderLink = itemProps => <Link to={this.props.to} {...itemProps} />;
+  render() {
+    const { classes } = this.props;
+
+    return (
+      <Card className={classes.card}>
+        <CardMedia className={classes.positionMedia}>
+          <img
+            className={classes.media}
+            src="http://www.pngall.com/wp-content/uploads/2/Runner-PNG-Free-Download.png"
+            title="Runner"
+            alt="Blue runner clip art"
+          />
+        </CardMedia>
+
+        <CardContent>
+          <Typography variant="h5" component="h2">
+            Weight Tracker App
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <div className={classes.positionStartBtn}>
+            <Button variant="contained" size="large" color="secondary" className={classes.button} component={Link} to="/users">
+              Start
+            </Button>
+          </div>
+        </CardActions>
+      </Card>
+    );
+  }
+}
+
+StartScreen.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles, { theme: true })(StartScreen);

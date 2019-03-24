@@ -6,8 +6,10 @@ import { Route } from 'react-router-dom';
 import { theme } from './AppStyles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { MuiThemeProvider } from '@material-ui/core/styles';
+import StartScreen from './components/startscreen/StartScreen';
+import UsersListContainer from './components/users/UsersListContainer';
+import UserWeightContainer from './components/userweigth/UserWeightContainer';
 
-import Home from './components/Home';
 
 class App extends Component {
   render() {
@@ -16,7 +18,10 @@ class App extends Component {
         <MuiThemeProvider theme={theme}>
           <div className="App">
             <CssBaseline />
-            <Route path="/" exact component={Home} />
+            <Route path="/" exact component={StartScreen} />
+            <Route path="/users" exact component={UsersListContainer} />
+            <Route path="/users/:id" component={UserWeightContainer} />
+
           </div>
         </MuiThemeProvider>
       </Provider>
