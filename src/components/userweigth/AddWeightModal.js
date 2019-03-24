@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import PropTypes from 'prop-types';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
-import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import { InputLabel } from '@material-ui/core';
 import { styles } from './AddWeightModalStyles';
 
@@ -47,10 +47,8 @@ class AddWeightModal extends PureComponent {
         <Button onClick={this.handleClickOpen} variant="contained" size="medium" color="secondary" className={classes.button} >
           Add weight
         </Button>
-        <Dialog
-          open={this.state.open}
-          onClose={this.handleClose}
-        >
+
+        <Dialog open={this.state.open} onClose={this.handleClose}>
           <DialogContent>
             <ValidatorForm ref="form" onSubmit={this.handleSubmit} className={classes.form} autoComplete="off" noValidate>
               <TextValidator
@@ -93,14 +91,23 @@ class AddWeightModal extends PureComponent {
                 validators={['required']}
                 errorMessages={['Required field']}
               />
+
               <div className={classes.positionSubmitBtn}>
                 <InputLabel htmlFor="submit">
-                  <Button onClick={this.handleClose} variant="contained" color="primary" size="large" component="span" className={classes.submitBtn}>
+                  <Button
+                    onClick={this.handleClose}
+                    variant="contained"
+                    color="primary"
+                    size="large"
+                    component="span"
+                    className={classes.submitBtn}
+                  >
                     Save
                   </Button>
                 </InputLabel>
                 <input id="submit" className="submit-btn" type="submit" value="Save Weight" style={{ display: "none" }} />
               </div>
+
             </ValidatorForm>
           </DialogContent>
         </Dialog>

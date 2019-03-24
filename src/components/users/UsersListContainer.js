@@ -5,16 +5,15 @@ import UsersList from './UsersList';
 
 class UsersListContainer extends PureComponent {
   componentDidMount() {
-    if(this.props.users === null) this.props.loadUsers();
+    if (this.props.users === null) this.props.loadUsers();
   }
 
   render() {
-    if(!this.props.users) return 'Loading users ...';
+    if (!this.props.users) return 'Loading users ...';
     return (
       <div>
-        <UsersList users={this.props.users}/>
+        <UsersList users={this.props.users} />
       </div>
-
     );
   }
 }

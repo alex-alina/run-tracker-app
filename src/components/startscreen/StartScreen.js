@@ -8,10 +8,12 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import runner from '../../assets/images/Runner.png';
 import { styles } from './StartScreenStyles';
 
 class StartScreen extends PureComponent {
   renderLink = itemProps => <Link to={this.props.to} {...itemProps} />;
+
   render() {
     const { classes } = this.props;
 
@@ -20,7 +22,7 @@ class StartScreen extends PureComponent {
         <CardMedia className={classes.positionMedia}>
           <img
             className={classes.media}
-            src="http://www.pngall.com/wp-content/uploads/2/Runner-PNG-Free-Download.png"
+            src={runner}
             title="Runner"
             alt="Blue runner clip art"
           />
@@ -31,9 +33,15 @@ class StartScreen extends PureComponent {
             Weight Tracker App
           </Typography>
         </CardContent>
+
         <CardActions>
           <div className={classes.positionStartBtn}>
-            <Button variant="contained" size="large" color="secondary" className={classes.button} component={Link} to="/users">
+            <Button 
+              variant="contained" 
+              size="large" color="secondary" 
+              className={classes.button} 
+              component={Link} to="/users"
+            >
               Start
             </Button>
           </div>

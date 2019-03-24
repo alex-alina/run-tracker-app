@@ -1,4 +1,5 @@
 import { createMuiTheme } from '@material-ui/core/styles';
+
 export const theme = createMuiTheme({
   palette: {
     primary: {
@@ -14,6 +15,7 @@ export const theme = createMuiTheme({
       contrastText: '#ffffff',
     },
   },
+
   typography: {
     fontFamily: [
       'Roboto',
@@ -21,12 +23,14 @@ export const theme = createMuiTheme({
     ],
     useNextVariants: true,
   },
+
   overrides: {
     MuiTypography: {
       root: {
         color: '#fff',
       }
     },
+
     MuiListItem: {
       button: {
         paddingTop: '10px',
@@ -38,6 +42,7 @@ export const theme = createMuiTheme({
         paddingBottom: '6px',
       },
     },
+
     MuiAvatar: {
       root: {
         width: '50px',
@@ -46,17 +51,5 @@ export const theme = createMuiTheme({
         marginRight: '20px',
       },
     },
-    MuiFormControlLabel: {
-      labelPlacementStart: {
-        flexDirection: 'row',
-      }
-    },
-    MuiFormGroup: {
-      root: {
-        flexWrap: 'wrap',
-        flexDirection: 'row',
-      }
-    },
- 
   }
 });

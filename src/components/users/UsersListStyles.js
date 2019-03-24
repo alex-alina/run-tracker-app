@@ -1,5 +1,4 @@
 export const styles = theme => ({
-
   card: {
     width: '80%',
     margin: 'auto',
@@ -14,6 +13,7 @@ export const styles = theme => ({
       paddingBottom: theme.spacing.unit * 10,
     },
   },
+
   userLi: {
     width: '80%',
     display: 'flex',
@@ -24,6 +24,7 @@ export const styles = theme => ({
     paddingLeft: '30px',
     backgroundColor: theme.palette.secondary.main,
   },
+  
   liText: {
     color: '#fff',
     fontSize: 'calc(1rem + 0.5vw)'
