@@ -8,6 +8,7 @@ import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import { styles } from './UserWeightListStyles';
+import AddWeightModal from './AddWeightModal';
 
 class UsersList extends PureComponent {
   renderLink = itemProps => <Link to={this.props.to} {...itemProps} />;
@@ -23,9 +24,7 @@ class UsersList extends PureComponent {
         </div>
         <div className={classes.listContainer}>
           <div className={classes.positionBtns}>
-            <Button variant="contained" size="medium" color="secondary" className={classes.button} component={Link} to="/">
-              Add Weight
-            </Button>
+            <AddWeightModal />
             <Button variant="contained" size="medium" color="primary" className={classes.button} component={Link} to="/">
               Clear
             </Button>
