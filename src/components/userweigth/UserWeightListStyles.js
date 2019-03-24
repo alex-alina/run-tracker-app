@@ -39,16 +39,7 @@ export const styles = theme => ({
     display: 'flex',
     justifyContent: 'space-between',
   },
-  // userLi: {
-  //   width: '80%',
-  //   display: 'flex',
-  //   justifyContent: 'flex-start',
-  //   margin: 'auto',
-  //   paddingTop: theme.spacing.unit * 1.5,
-  //   paddingBottom: theme.spacing.unit * 1.5,
-  //   paddingLeft: '30px',
-  //   backgroundColor: theme.palette.secondary.main,
-  // },
+  
   liText: {
     color: '#fff',
     fontSize: 'calc(1rem + 0.5vw)'

@@ -11,11 +11,13 @@ const reducer = (state = initialState, action = {}) => {
       ...state,
       [userId]: [...userWeights, {weight, date}]
     };
+
   case CLEAR_WEIGHTS:
     return{
       ...state,
       [action.payload]: [],
     };
+
   case DELETE_WEIGHT:
     const { index } = action.payload;
     const userWeight = state[action.payload.userId];
@@ -24,6 +26,7 @@ const reducer = (state = initialState, action = {}) => {
       ...state,
       [action.payload.userId]: updatedWeights,
     };
+    
   default:
     return state;
   }

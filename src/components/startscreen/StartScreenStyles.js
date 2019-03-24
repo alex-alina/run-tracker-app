@@ -11,6 +11,7 @@ export const styles = theme => ({
       padding: theme.spacing.unit * 1,
     },
   },
+
   positionMedia:{
     width: '80%',
     margin: '20% auto 10% auto',
@@ -23,11 +24,12 @@ export const styles = theme => ({
       height: "400px",
     },
   },
+
   media: {
     width: '80%',
     height: 'auto',
     margin: '8% auto',
-    paddingRight: '10%',
+    paddingRight: theme.spacing.unit * 3,
     objectFit: 'contain',
     verticalAlign: 'center',
     [theme.breakpoints.up('md')]: {
@@ -35,6 +37,7 @@ export const styles = theme => ({
       height: "300px",
     },
   },
+
   positionStartBtn: {
     minWidth: '64px',
     width: '100px',

@@ -10,7 +10,6 @@ import StartScreen from './components/startscreen/StartScreen';
 import UsersListContainer from './components/users/UsersListContainer';
 import UserWeightContainer from './components/userweigth/UserWeightContainer';
 
-
 class App extends Component {
   render() {
     return (
@@ -21,7 +20,6 @@ class App extends Component {
             <Route path="/" exact component={StartScreen} />
             <Route path="/users" exact component={UsersListContainer} />
             <Route path="/users/:id" component={UserWeightContainer} />
-
           </div>
         </MuiThemeProvider>
       </Provider>
