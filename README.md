@@ -37,6 +37,7 @@ The goal of this project was to build a Single Page Application to track users w
 * Install the dependencies using `yarn install`
 * Run the JSON-server using `json-server --delay 1000 --port 4000 db.json`
   * Make sure the JSON server is running at all times, while your application is running.
+* Test that the JSON server is running using httpie `http :4000/users`
 * Start the server using `yarn start`
 
 ## License
