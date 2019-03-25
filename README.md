@@ -2,7 +2,7 @@
 ## Weight Tracker App - Client
 
 ## Demo
-WIP
+![Demo - WIP](Demo.gif)
 
 ## Description
 
