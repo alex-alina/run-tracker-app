@@ -2,7 +2,7 @@
 ## Weight Tracker App - Client
 
 ## Demo
-[Demo on Netlify ](https://elated-archimedes-8a6390.netlify.com)
+WIP
 
 ## Description
 
