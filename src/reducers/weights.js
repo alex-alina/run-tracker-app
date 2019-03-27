@@ -1,4 +1,9 @@
 import { WEIGHT_ADDED, CLEAR_WEIGHTS, DELETE_WEIGHT } from "../actions/weights";
+// const dummyData = [
+//   {weight: 62, date: new Date()},
+//   {weight: 56, date: new Date()}, 
+//   {weight: 69, date: new Date()},
+// ];
 
 const initialState = {};
 
@@ -9,7 +14,7 @@ const reducer = (state = initialState, action = {}) => {
     const userWeights = state[userId] || [];
     return {
       ...state,
-      [userId]: [...userWeights, {weight, date}]
+      [userId]: [...userWeights, {weight: parseInt(weight) , date}]
     };
 
   case CLEAR_WEIGHTS:

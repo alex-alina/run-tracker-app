@@ -3,9 +3,11 @@ import { loadUser } from '../../actions/users';
 import { connect } from 'react-redux';
 import UserWeightList from './UserWeightList';
 
+
 class UserWeightContainer extends PureComponent {
   componentDidMount() {
-    if (this.props.user === null) this.props.loadUser(Number(this.props.match.params.id));
+    const currentUserId = Number(this.props.match.params.id);
+    if (this.props.user === null || this.props.user.id !== currentUserId) this.props.loadUser(currentUserId);
   }
 
   render() {

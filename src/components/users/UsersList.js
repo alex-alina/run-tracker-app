@@ -9,28 +9,33 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import Card from '@material-ui/core/Card';
 import { styles } from './UsersListStyles';
+import { maxWeight } from '../../helpers/maxWeight';
 
 class UsersList extends PureComponent {
   renderLink = itemProps => <Link to={this.props.to} {...itemProps} />;
+  
 
   render() {
-    const { classes, users } = this.props;
-
+    const { classes, users, weights } = this.props;
     return (
       <Card className={classes.card}>
         <List>
           {users.map((user) => (
             <ListItem key={user.id} className={classes.userLi}>
-            
-              <ListItemAvatar>
-                <Avatar alt="Avatar photo" src={user.avatar} />
-              </ListItemAvatar>
+              <div className={classes.placeLeft}>
+                <ListItemAvatar>
+                  <Avatar alt="Avatar photo" src={user.avatar} />
+                </ListItemAvatar>
 
-              <Typography variant="body1" className={classes.liText}>
-                <Link to={`/users/${user.id}`} className={classes.link}>
-                  {`${user.firstName} ${user.lastName}`}
-                </Link>
-              </Typography>
+                <Typography variant="body1" className={classes.liText}>
+                  <Link to={`/users/${user.id}`} className={classes.link}>
+                    {`${user.firstName} ${user.lastName}`}
+                  </Link>
+                </Typography>
+              </div>
+
+
+              <Typography className={classes.placeRight} >{maxWeight(weights[user.id] || [])}</Typography>
 
             </ListItem>
           ))}
