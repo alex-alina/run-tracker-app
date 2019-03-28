@@ -8,7 +8,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import StartScreen from './components/startscreen/StartScreen';
 import UsersListContainer from './components/users/UsersListContainer';
-import UserWeightContainer from './components/userweigth/UserWeightContainer';
+import UserRunsContainer from './components/user-runs/UserRunsContainer';
 
 class App extends Component {
   render() {
@@ -19,7 +19,7 @@ class App extends Component {
             <CssBaseline />
             <Route path="/" exact component={StartScreen} />
             <Route path="/users" exact component={UsersListContainer} />
-            <Route path="/users/:id" component={UserWeightContainer} />
+            <Route path="/users/:id" component={UserRunsContainer} />
           </div>
         </MuiThemeProvider>
       </Provider>

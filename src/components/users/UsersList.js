@@ -9,14 +9,14 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import Card from '@material-ui/core/Card';
 import { styles } from './UsersListStyles';
-import { maxWeight } from '../../helpers/maxWeight';
+// import { findMax } from '../../helpers/findMax';
 
 class UsersList extends PureComponent {
   renderLink = itemProps => <Link to={this.props.to} {...itemProps} />;
   
 
   render() {
-    const { classes, users, weights } = this.props;
+    const { classes, users, runs } = this.props;
     return (
       <Card className={classes.card}>
         <List>
@@ -33,10 +33,6 @@ class UsersList extends PureComponent {
                   </Link>
                 </Typography>
               </div>
-
-
-              <Typography className={classes.placeRight} >{maxWeight(weights[user.id] || [])}</Typography>
-
             </ListItem>
           ))}
         </List>

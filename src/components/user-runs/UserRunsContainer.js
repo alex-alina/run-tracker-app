@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import { loadUser } from '../../actions/users';
 import { connect } from 'react-redux';
-import UserWeightList from './UserWeightList';
+import UserRunsList from './UserRunsList';
 
 
-class UserWeightContainer extends PureComponent {
+class UserRunsContainer extends PureComponent {
   componentDidMount() {
     const currentUserId = Number(this.props.match.params.id);
     if (this.props.user === null || this.props.user.id !== currentUserId) this.props.loadUser(currentUserId);
@@ -14,7 +14,7 @@ class UserWeightContainer extends PureComponent {
     if (!this.props.user) return 'Loading your data...';
     return (
       <div>
-        <UserWeightList user={this.props.user} />
+        <UserRunsList user={this.props.user} />
       </div>
     );
   }
@@ -24,4 +24,4 @@ const mapStateToProps = state => ({
   user: state.user
 });
 
-export default connect(mapStateToProps, { loadUser })(UserWeightContainer);
+export default connect(mapStateToProps, { loadUser })(UserRunsContainer);
