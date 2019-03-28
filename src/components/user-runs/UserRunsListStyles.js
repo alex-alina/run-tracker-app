@@ -26,7 +26,7 @@ export const styles = theme => ({
     justifyContent: 'space-between',
   },
   
-  weightList: {
+  runsList: {
     width: '80%',
     height: 'auto',
     minHeight:'200px',

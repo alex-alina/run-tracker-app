@@ -6,9 +6,9 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import { InputLabel } from '@material-ui/core';
-import { styles } from './AddWeightModalStyles';
+import { styles } from './AddRunModalStyles';
 
-class AddWeightModal extends PureComponent {
+class AddRunModal extends PureComponent {
   state = {
     open: false,
   };
@@ -31,10 +31,11 @@ class AddWeightModal extends PureComponent {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.onSubmit(this.state.weight, this.state.date);
+    this.props.onSubmit(this.state.distance, this.state.duration, this.state.date);
     this.setState({
       open: false,
-      weight: "",
+      distance: "",
+      duration: "",
       date: "",
     });
   }
@@ -45,7 +46,7 @@ class AddWeightModal extends PureComponent {
     return (
       <div>
         <Button onClick={this.handleClickOpen} variant="contained" size="medium" color="secondary" className={classes.button} >
-          Add weight
+          Add run
         </Button>
 
         <Dialog open={this.state.open} onClose={this.handleClose}>
@@ -53,13 +54,34 @@ class AddWeightModal extends PureComponent {
             <ValidatorForm ref="form" onSubmit={this.handleSubmit} className={classes.form} autoComplete="off" noValidate>
               <TextValidator
                 required
-                id="weight"
-                label="Weight(kg)"
+                id="distance"
+                label="Distance(km)"
                 type="number"
-                name="weight"
-                value={this.state.weight || ""}
+                name="distance"
+                value={this.state.distance || ""}
                 onChange={this.handleChange}
-                placeholder="Enter weight"
+                placeholder="Enter distance"
+                style={{ margin: 12 }}
+                fullWidth
+                margin="normal"
+                variant="outlined"
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                className={classes.textField}
+                autoComplete="off"
+                validators={['required', 'isNumber']}
+                errorMessages={['Required field', 'Please insert a number']}
+              />
+              <TextValidator
+                required
+                id="duration"
+                label="Duration(min)"
+                type="number"
+                name="duration"
+                value={this.state.duration || ""}
+                onChange={this.handleChange}
+                placeholder="Enter duration"
                 style={{ margin: 12 }}
                 fullWidth
                 margin="normal"
@@ -105,7 +127,7 @@ class AddWeightModal extends PureComponent {
                     Save
                   </Button>
                 </InputLabel>
-                <input id="submit" className="submit-btn" type="submit" value="Save Weight" style={{ display: "none" }} />
+                <input id="submit" className="submit-btn" type="submit" value="Save distance" style={{ display: "none" }} />
               </div>
 
             </ValidatorForm>
@@ -116,8 +138,8 @@ class AddWeightModal extends PureComponent {
   }
 }
 
-AddWeightModal.propTypes = {
+AddRunModal.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(AddWeightModal);
+export default withStyles(styles)(AddRunModal);

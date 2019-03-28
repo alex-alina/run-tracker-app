@@ -17,16 +17,25 @@ export const styles = theme => ({
   userLi: {
     width: '80%',
     display: 'flex',
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
     margin: 'auto',
     paddingTop: theme.spacing.unit * 1.5,
     paddingBottom: theme.spacing.unit * 1.5,
     paddingLeft: '30px',
     backgroundColor: theme.palette.secondary.main,
   },
-  
+  placeLeft: {
+    display: 'flex',
+    justifyContent: 'flex-start',
+  },
+
   liText: {
     color: '#fff',
-    fontSize: 'calc(1rem + 0.5vw)'
+    fontSize: 'calc(1rem + 0.5vw)',
+  }, 
+  placeRight: {
+    color: '#fff',
+    fontSize: 'calc(1rem + 0.5vw)',
+    paddingRight: theme.spacing.unit * 3,
   }
 });
