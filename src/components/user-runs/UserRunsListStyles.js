@@ -33,7 +33,7 @@ export const styles = theme => ({
     margin: 'auto',
     marginTop: theme.spacing.unit * 3,
     borderRadius: '4px',
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.secondary.main,
   },
   
   liItem:{

@@ -7,11 +7,16 @@ const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
   case USERS_FETCHED:
     const users = action.users;
+
+    // populate user runs with dummy data for testing
     const usersWithRuns = users.map(user => {
       user.runs.push(assignRandomRun(dummyData), assignRandomRun(dummyData));
       return user;
     });
     return usersWithRuns;
+    
+    // for production replace the above dummy data code with the line below
+    // return users;
 
   case RUN_ADDED:
     const { userId, distance, duration, date } = action.payload;

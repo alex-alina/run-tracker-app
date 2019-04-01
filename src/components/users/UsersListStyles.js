@@ -23,7 +23,7 @@ export const styles = theme => ({
     paddingTop: theme.spacing.unit * 1.5,
     paddingBottom: theme.spacing.unit * 1.5,
     paddingLeft: '30px',
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.secondary.main,
   },
   spaceListItem: {
     display: 'flex',

@@ -49,7 +49,7 @@ class UserRunsList extends PureComponent {
                       {`${entry.distance} Km : ${entry.duration} min : ${entry.date.getDate()}.${entry.date.getMonth() + 1}.${entry.date.getFullYear()}`}
                     </Typography>
 
-                    <Button onClick={() => this.deleteRun(runIndex)} variant="contained" size="small" color="secondary">
+                    <Button onClick={() => this.deleteRun(runIndex)} variant="contained" size="small" color="primary">
                       Delete
                     </Button>
                   </ListItem>
