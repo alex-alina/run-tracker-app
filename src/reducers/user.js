@@ -6,7 +6,6 @@ const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
   case USER_FETCHED:
     return action.userId;
-  
   default:
     return state;
   }

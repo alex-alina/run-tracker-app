@@ -1,12 +1,19 @@
 import { USERS_FETCHED } from "../actions/users";
 import { RUN_ADDED, CLEAR_RUNS, DELETE_RUN } from "../actions/runs";
-
+import { dummyData, assignRandomRun } from "../helpers/randomRuns";
 const initialState = null;
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
   case USERS_FETCHED:
-    return action.users;
+    const users = action.users;
+    console.log('momo',users);
+    const usersWithRuns = users.map(user => {
+      user.runs.push(assignRandomRun(dummyData));
+      return user;
+    });
+    console.log('yolo',usersWithRuns);
+    return usersWithRuns;
 
   case RUN_ADDED:
     const { userId, distance, duration, date } = action.payload;
