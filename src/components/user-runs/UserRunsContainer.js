@@ -7,21 +7,23 @@ import UserRunsList from './UserRunsList';
 class UserRunsContainer extends PureComponent {
   componentDidMount() {
     const currentUserId = Number(this.props.match.params.id);
-    if (this.props.user === null || this.props.user.id !== currentUserId) this.props.loadUser(currentUserId);
+    if (this.props.userId === null || this.props.userId !== currentUserId) this.props.loadUser(currentUserId);
   }
 
   render() {
-    if (!this.props.user) return 'Loading your data...';
+    if (!this.props.userId || !this.props.users) return 'Loading your data...';
+    const user = this.props.users.filter(user => user.id === this.props.userId)[0];
     return (
       <div>
-        <UserRunsList user={this.props.user} />
+        <UserRunsList user={user} />
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  user: state.user
+  userId: state.userId,
+  users: state.users,
 });
 
 export default connect(mapStateToProps, { loadUser })(UserRunsContainer);
