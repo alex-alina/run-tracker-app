@@ -6,13 +6,13 @@ export const theme = createMuiTheme({
       main: '#ffb300',
       light: '#ffe54c',
       dark: '#c68400',
-      contrastText: '#000000',
+      contrastText: '#000',
     },
     secondary: {
       main: '#0277bd',
-      light: '#58a5f0',
-      dark: '#004c8c',
-      contrastText: '#ffffff',
+      light: '#58a5ef',
+      dark: '#004c8b',
+      contrastText: '#fff',
     },
   },
 
@@ -35,7 +35,7 @@ export const theme = createMuiTheme({
       button: {
         paddingTop: '10px',
         paddingBottom: '10px',
-        backgroundColor:' #0277bd',
+        backgroundColor:'#0277bd',
       },
       root: {
         paddingTop: '6px',

@@ -35,18 +35,16 @@ class UserRunsList extends PureComponent {
         <div className={classes.listContainer}>
           <div className={classes.positionBtns}>
             <AddRunModal onSubmit={this.onSubmit} />
-            <Button onClick={this.clearList} variant="contained" size="medium" color="primary" className={classes.button} >
+            <Button onClick={this.clearList} variant="contained" size="medium" color="secondary" className={classes.button} >
               Clear
             </Button>
           </div>
 
           <div className={classes.runsList}>
-            {/* add a header to the list "Distance   Duration   Date" */}
             {user.runs ?
               <List>
                 {user.runs.map((entry, runIndex) => (
                   <ListItem key={runIndex} className={classes.liItem}>
-
                     <Typography variant="body1" className={classes.liText}>
                       {`${entry.distance} Km : ${entry.duration} min : ${entry.date.getDate()}.${entry.date.getMonth() + 1}.${entry.date.getFullYear()}`}
                     </Typography>
@@ -54,7 +52,6 @@ class UserRunsList extends PureComponent {
                     <Button onClick={() => this.deleteRun(runIndex)} variant="contained" size="small" color="primary">
                       Delete
                     </Button>
-
                   </ListItem>
                 ))}
               </List>

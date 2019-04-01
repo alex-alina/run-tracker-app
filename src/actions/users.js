@@ -17,10 +17,8 @@ const userFetched = userId => ({
 export const loadUsers = () => (dispatch, getState) => {
   // when the state already contains users, we don't fetch them again
   if (getState().users) return;
-  // a GET /users request
   request(`${baseUrl}/users`)
     .then(response => {
-      // dispatch an USERS_FETCHED action that contains the users
       dispatch(usersFetched(response.body));
     })
     .catch(console.error);
