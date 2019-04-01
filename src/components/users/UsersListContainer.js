@@ -12,7 +12,7 @@ class UsersListContainer extends PureComponent {
     if (!this.props.users) return 'Loading users ...';
     return (
       <div>
-        <UsersList users={this.props.users} runs={this.props.runs} />
+        <UsersList users={this.props.users} />
       </div>
     );
   }
@@ -20,7 +20,6 @@ class UsersListContainer extends PureComponent {
 
 const mapStateToProps = state => ({
   users: state.users,
-  runs: state.runs
 });
 
 export default connect(mapStateToProps, { loadUsers })(UsersListContainer);

@@ -17,10 +17,10 @@ export const clearList = (userId) => ({
   payload: userId
 });
 
-export const deleteRun = (userId, index) => ({
+export const deleteRun = (userId, runIndex) => ({
   type: DELETE_RUN,
   payload: {
     userId,
-    index,
+    runIndex,
   }
 });

@@ -18,24 +18,27 @@ export const styles = theme => ({
     width: '80%',
     display: 'flex',
     justifyContent: 'space-between',
+    alignItems: 'center',
     margin: 'auto',
     paddingTop: theme.spacing.unit * 1.5,
     paddingBottom: theme.spacing.unit * 1.5,
     paddingLeft: '30px',
     backgroundColor: theme.palette.secondary.main,
   },
-  placeLeft: {
+  spaceListItem: {
     display: 'flex',
     justifyContent: 'flex-start',
+    alignItems: 'center',
   },
 
   liText: {
     color: '#fff',
     fontSize: 'calc(1rem + 0.5vw)',
   }, 
+
   placeRight: {
-    color: '#fff',
+    display: 'flex',
+    justifyContent: 'flex-end',
     fontSize: 'calc(1rem + 0.5vw)',
-    paddingRight: theme.spacing.unit * 3,
   }
 });

@@ -30,7 +30,7 @@ class StartScreen extends PureComponent {
 
         <CardContent>
           <Typography variant="h5" component="h2">
-            Running Tracker App
+            Runs Tracker App
           </Typography>
         </CardContent>
 

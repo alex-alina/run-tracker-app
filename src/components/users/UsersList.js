@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import classNames from 'classnames';
 import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -9,20 +10,20 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import Card from '@material-ui/core/Card';
 import { styles } from './UsersListStyles';
-// import { findMax } from '../../helpers/findMax';
+import { findMax } from '../../helpers/findMax';
 
 class UsersList extends PureComponent {
   renderLink = itemProps => <Link to={this.props.to} {...itemProps} />;
-  
 
   render() {
-    const { classes, users, runs } = this.props;
+    const { classes, users } = this.props;
     return (
       <Card className={classes.card}>
+
         <List>
           {users.map((user) => (
             <ListItem key={user.id} className={classes.userLi}>
-              <div className={classes.placeLeft}>
+              <div className={classes.spaceListItem}>
                 <ListItemAvatar>
                   <Avatar alt="Avatar photo" src={user.avatar} />
                 </ListItemAvatar>
@@ -32,7 +33,15 @@ class UsersList extends PureComponent {
                     {`${user.firstName} ${user.lastName}`}
                   </Link>
                 </Typography>
+
               </div>
+
+              <div className={classes.placeRight}>
+                <Typography variant="body1" className={classNames(classes.liText, classes.spaceTopScore)}>
+                  Longest run: {findMax(user.runs, "distance")} Km
+                </Typography>
+              </div>
+
             </ListItem>
           ))}
         </List>

@@ -14,19 +14,19 @@ import { styles } from './UserRunsListStyles';
 class UserRunsList extends PureComponent {
 
   onSubmit = (distance, duration, date) => {
-    this.props.addRun(this.props.user.id, distance, duration, new Date(date));
+    this.props.addRun(this.props.userId, distance, duration, new Date(date));
   }
 
   clearList = () => {
-    this.props.clearList(this.props.user.id);
+    this.props.clearList(this.props.userId);
   }
 
   deleteRun = (listIndex) => {
-    this.props.deleteRun(this.props.user.id, listIndex);
+    this.props.deleteRun(this.props.userId, listIndex);
   }
 
   render() {
-    const { classes, user, runs } = this.props;
+    const { classes, user } = this.props;
 
     return (
       <Card className={classes.card}>
@@ -42,16 +42,16 @@ class UserRunsList extends PureComponent {
 
           <div className={classes.runsList}>
             {/* add a header to the list "Distance   Duration   Date" */}
-            {runs[user.id] ?
+            {user.runs ?
               <List>
-                {runs[user.id].map((entry, index) => (
-                  <ListItem key={index} className={classes.liItem}>
+                {user.runs.map((entry, runIndex) => (
+                  <ListItem key={runIndex} className={classes.liItem}>
 
                     <Typography variant="body1" className={classes.liText}>
                       {`${entry.distance} Km : ${entry.duration} min : ${entry.date.getDate()}.${entry.date.getMonth() + 1}.${entry.date.getFullYear()}`}
                     </Typography>
 
-                    <Button onClick={() => this.deleteRun(index)} variant="contained" size="small" color="primary">
+                    <Button onClick={() => this.deleteRun(runIndex)} variant="contained" size="small" color="primary">
                       Delete
                     </Button>
 
@@ -71,8 +71,7 @@ UserRunsList.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  user: state.user,
-  runs: state.runs
+  userId: state.userId,
 });
 
 export default connect(mapStateToProps, { addRun, clearList, deleteRun })(withStyles(styles)(UserRunsList));

@@ -9,9 +9,9 @@ const usersFetched = users => ({
   users
 });
 
-const userFetched = user => ({
+const userFetched = userId => ({
   type: USER_FETCHED,
-  user
+  userId
 });
 
 export const loadUsers = () => (dispatch, getState) => {
@@ -27,10 +27,12 @@ export const loadUsers = () => (dispatch, getState) => {
 };
 
 export const loadUser = (userId) => dispatch => {
-  request
-    .get(`${baseUrl}/users/${userId}`)
-    .then(response => {
-      dispatch(userFetched(response.body));
-    })
-    .catch(console.error);
+  dispatch(loadUsers());
+  dispatch(userFetched(userId));
+  // request
+  //   .get(`${baseUrl}/users/${userId}`)
+  //   .then(response => {
+  //     dispatch(userFetched(response.body.id));
+  //   })
+  //   .catch(console.error);
 };
