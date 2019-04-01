@@ -35,7 +35,7 @@ class UserRunsList extends PureComponent {
         <div className={classes.listContainer}>
           <div className={classes.positionBtns}>
             <AddRunModal onSubmit={this.onSubmit} />
-            <Button onClick={this.clearList} variant="contained" size="medium" color="primary" className={classes.button} >
+            <Button onClick={this.clearList} variant="contained" size="medium" color="secondary" className={classes.button} >
               Clear
             </Button>
           </div>
@@ -49,7 +49,7 @@ class UserRunsList extends PureComponent {
                       {`${entry.distance} Km : ${entry.duration} min : ${entry.date.getDate()}.${entry.date.getMonth() + 1}.${entry.date.getFullYear()}`}
                     </Typography>
 
-                    <Button onClick={() => this.deleteRun(runIndex)} variant="contained" size="small" color="primary">
+                    <Button onClick={() => this.deleteRun(runIndex)} variant="contained" size="small" color="secondary">
                       Delete
                     </Button>
                   </ListItem>

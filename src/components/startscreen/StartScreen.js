@@ -37,7 +37,8 @@ class StartScreen extends PureComponent {
           <div className={classes.positionStartBtn}>
             <Button 
               variant="contained" 
-              size="large" color="secondary" 
+              size="large"
+              color="primary" 
               className={classes.button} 
               component={Link} to="/users"
             >

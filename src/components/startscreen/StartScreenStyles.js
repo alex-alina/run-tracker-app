@@ -3,6 +3,7 @@ export const styles = theme => ({
     width: '80%',
     margin: 'auto',
     padding: theme.spacing.unit * 1,
+    backgroundColor: '#dcedc8',
     [theme.breakpoints.up('md')]: {
       maxWidth: '500',
       width: '40%',
@@ -12,11 +13,11 @@ export const styles = theme => ({
     },
   },
 
-  positionMedia:{
+  positionMedia: {
     width: '80%',
     margin: '20% auto 10% auto',
-    padding:theme.spacing.unit * 1,
-    backgroundColor: theme.palette.primary.main,
+    padding: theme.spacing.unit * 1,
+    backgroundColor: '#fff',
     [theme.breakpoints.up('md')]: {
       margin: '10% auto 5% auto',
       padding: theme.spacing.unit * 1,

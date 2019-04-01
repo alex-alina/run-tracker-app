@@ -7,12 +7,10 @@ const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
   case USERS_FETCHED:
     const users = action.users;
-    console.log('momo',users);
     const usersWithRuns = users.map(user => {
-      user.runs.push(assignRandomRun(dummyData));
+      user.runs.push(assignRandomRun(dummyData), assignRandomRun(dummyData));
       return user;
     });
-    console.log('yolo',usersWithRuns);
     return usersWithRuns;
 
   case RUN_ADDED:

@@ -45,7 +45,7 @@ class AddRunModal extends PureComponent {
 
     return (
       <div>
-        <Button onClick={this.handleClickOpen} variant="contained" size="medium" color="secondary" className={classes.button} >
+        <Button onClick={this.handleClickOpen} variant="contained" size="medium" color="primary" className={classes.button} >
           Add run
         </Button>
 
