@@ -1,6 +1,7 @@
 import { USERS_FETCHED } from "../actions/users";
 import { RUN_ADDED, CLEAR_RUNS, DELETE_RUN } from "../actions/runs";
 import { dummyData, assignRandomRun } from "../helpers/randomRuns";
+
 const initialState = null;
 
 const reducer = (state = initialState, action = {}) => {
@@ -34,11 +35,13 @@ const reducer = (state = initialState, action = {}) => {
     return addRunToUser;
 
   case CLEAR_RUNS:
-    const userIdForClear = action.payload.userId;
+    const userIdForClear = action.payload;
     const clearUserRuns = state.map(user => {
       if(user.id === userIdForClear) {
         user.runs.length = 0;
-        return user;
+        return {
+          ...user,
+        };
       } else {
         return user;
       }
