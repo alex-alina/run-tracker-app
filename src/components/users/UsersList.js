@@ -19,7 +19,6 @@ class UsersList extends PureComponent {
     const { classes, users } = this.props;
     return (
       <Card className={classes.card}>
-
         <List>
           {users.map((user) => (
             <ListItem key={user.id} className={classes.userLi}>
@@ -33,7 +32,6 @@ class UsersList extends PureComponent {
                     {`${user.firstName} ${user.lastName}`}
                   </Link>
                 </Typography>
-
               </div>
 
               <div className={classes.placeRight}>
@@ -41,7 +39,6 @@ class UsersList extends PureComponent {
                   Longest run: {findMax(user.runs, "distance")} km
                 </Typography>
               </div>
-
             </ListItem>
           ))}
         </List>
