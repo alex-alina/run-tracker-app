@@ -34,9 +34,14 @@ class UsersList extends PureComponent {
                 </div>
 
                 <div className={classes.placeRight}>
-                  <Typography variant="body1" className={classNames(classes.liText, classes.spaceTopScore)}>
-                    Longest run: {findMax(user.runs, "distance")} km
-                  </Typography>
+                  {user.runs.length !== 0 ?
+                    <Typography variant="body1" className={classNames(classes.liText, classes.spaceTopScore)}>
+                      Longest run: {findMax(user.runs, "distance")} km.
+                    </Typography>
+                    : <Typography variant="body1" className={classNames(classes.liText, classes.spaceTopScore)}>
+                      Add your first run.
+                    </Typography>
+                  }
                 </div>
               </ListItem>
             </Link>
