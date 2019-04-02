@@ -21,25 +21,25 @@ class UsersList extends PureComponent {
       <Card className={classes.card}>
         <List>
           {users.map((user) => (
-            <ListItem key={user.id} className={classes.userLi}>
-              <div className={classes.spaceListItem}>
-                <ListItemAvatar>
-                  <Avatar alt="Avatar photo" src={user.avatar} />
-                </ListItemAvatar>
+            <Link to={`/users/${user.id}`} className={classes.link}>
+              <ListItem key={user.id} className={classes.userLi}>
+                <div className={classes.spaceListItem}>
+                  <ListItemAvatar>
+                    <Avatar alt="Avatar photo" src={user.avatar} />
+                  </ListItemAvatar>
 
-                <Typography variant="body1" className={classes.liText}>
-                  <Link to={`/users/${user.id}`} className={classes.link}>
+                  <Typography variant="body1" className={classes.liText}>
                     {`${user.firstName} ${user.lastName}`}
-                  </Link>
-                </Typography>
-              </div>
+                  </Typography>
+                </div>
 
-              <div className={classes.placeRight}>
-                <Typography variant="body1" className={classNames(classes.liText, classes.spaceTopScore)}>
-                  Longest run: {findMax(user.runs, "distance")} km
-                </Typography>
-              </div>
-            </ListItem>
+                <div className={classes.placeRight}>
+                  <Typography variant="body1" className={classNames(classes.liText, classes.spaceTopScore)}>
+                    Longest run: {findMax(user.runs, "distance")} km
+                  </Typography>
+                </div>
+              </ListItem>
+            </Link>
           ))}
         </List>
       </Card>
