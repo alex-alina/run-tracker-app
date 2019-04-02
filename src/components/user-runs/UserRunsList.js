@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { addRun, clearList, deleteRun } from '../../actions/runs';
 import { connect } from 'react-redux';
+import { sortDesc } from '../../helpers/sortDesc';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
@@ -41,6 +42,7 @@ class UserRunsList extends PureComponent {
           </div>
 
           <div className={classes.runsList}>
+            {sortDesc(user.runs)}
             {user.runs ?
               <List>
                 {user.runs.map((entry, runIndex) => (
