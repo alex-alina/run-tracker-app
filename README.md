@@ -17,6 +17,7 @@ The goal of this project was to build a SPA to track users runs taken at differe
 ## Tech stack
 
 * React
+* Redux
 * Material-UI
 * JavaScript
 * CSS
