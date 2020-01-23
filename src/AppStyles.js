@@ -3,7 +3,7 @@ import { createMuiTheme } from '@material-ui/core/styles';
 export const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#ffb300',
+      main: '#ffd24c',
       light: '#ffe54c',
       dark: '#c68400',
       contrastText: '#000',
@@ -29,6 +29,12 @@ export const theme = createMuiTheme({
       root: {
         color: '#fff',
       }
+    },
+
+    MuiButton: {
+      contained: {
+        borderRadius: '50px',
+      },
     },
 
     MuiListItem: {

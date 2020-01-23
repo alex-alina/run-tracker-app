@@ -37,7 +37,7 @@ class UserRunsList extends PureComponent {
           <div className={classes.positionBtns}>
             <AddRunModal onSubmit={this.onSubmit} />
             <Button onClick={this.clearList} variant="contained" size="medium" color="secondary" className={classes.button} >
-              Clear
+              Clear All
             </Button>
           </div>
 

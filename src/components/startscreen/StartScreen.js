@@ -25,11 +25,29 @@ class StartScreen extends PureComponent {
             title="Runner"
             alt="Blue runner clip art"
           />
+          <img
+            className={classes.media}
+            src={runner}
+            title="Runner"
+            alt="Blue runner clip art"
+          />
+          <img
+            className={classes.media}
+            src={runner}
+            title="Runner"
+            alt="Blue runner clip art"
+          />
         </div>
 
         <CardContent>
           <Typography variant="h5" component="h2">
-            Runs Tracker App
+            Running Tracker App
+          </Typography>
+          <Typography variant="body1" component="p">
+            Running together is fun! Bring your friends or join one of our running groups.
+          </Typography>
+          <Typography variant="body1" component="p">
+            All group members can set a goal to run towards to (pun intended), add the date, length and duration of each run and check up the stats of other group members with our running tracking app.
           </Typography>
         </CardContent>
 
@@ -42,7 +60,7 @@ class StartScreen extends PureComponent {
               className={classes.button} 
               component={Link} to="/users"
             >
-              Start
+              Go to group stats
             </Button>
           </div>
         </CardActions>
