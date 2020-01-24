@@ -3,15 +3,15 @@ import { createMuiTheme } from '@material-ui/core/styles';
 export const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#ffb300',
-      light: '#ffe54c',
-      dark: '#c68400',
+      main: '#ffd24c',
+      light: '#ffe187',
+      dark: '#d69718',
       contrastText: '#000',
     },
     secondary: {
       main: '#0277bd',
       light: '#58a5ef',
-      dark: '#004c8b',
+      dark: '#0e65ad',
       contrastText: '#fff',
     },
   },
@@ -31,6 +31,12 @@ export const theme = createMuiTheme({
       }
     },
 
+    MuiButton: {
+      contained: {
+        borderRadius: '50px',
+      },
+    },
+
     MuiListItem: {
       button: {
         paddingTop: '10px',
@@ -43,12 +49,19 @@ export const theme = createMuiTheme({
       },
     },
 
+    MuiList: {
+      padding: {
+        paddingTop: 0,
+        paddingBottom: 0,
+      }
+    },
+
     MuiAvatar: {
       root: {
-        width: '50px',
-        height: '50px',
+        width: '30px',
+        height: '30px',
         backgroundColor: '#fff',
-        marginRight: '20px',
+        marginRight: '10px',
       },
     },
   }

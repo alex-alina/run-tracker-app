@@ -7,29 +7,32 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import runner from '../../assets/images/Runner.png';
 import { styles } from './StartScreenStyles';
+import homePageText from '../../utils/staticContent';
+import RunnerImg from '../runnerImg/RunnerImg';
 
 class StartScreen extends PureComponent {
   renderLink = itemProps => <Link to={this.props.to} {...itemProps} />;
 
   render() {
     const { classes } = this.props;
+    const { appTitle, appDescription } = homePageText;
 
     return (
       <Card className={classes.card}>
         <div className={classes.positionMedia}>
-          <img
-            className={classes.media}
-            src={runner}
-            title="Runner"
-            alt="Blue runner clip art"
-          />
+          <RunnerImg />
+          <RunnerImg />
+          <RunnerImg />
         </div>
 
         <CardContent>
-          <Typography variant="h5" component="h2">
-            Runs Tracker App
+          <Typography variant="h5" component="h2" className={classes.appTitle}>
+            {appTitle}
+          </Typography>
+          
+          <Typography variant="body1" className={classes.introParagraph}>
+            {appDescription}
           </Typography>
         </CardContent>
 
@@ -42,7 +45,7 @@ class StartScreen extends PureComponent {
               className={classes.button} 
               component={Link} to="/users"
             >
-              Start
+              Go to group stats
             </Button>
           </div>
         </CardActions>
