@@ -8,7 +8,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import StartScreen from './components/startscreen/StartScreen';
 import UsersContainer from './components/users/UsersContainer';
-import UserRunsContainer from './components/user-runs/UserRunsContainer';
+import UserRunsContainer from './components/userRuns/UserRunsContainer';
 
 class App extends Component {
   render() {

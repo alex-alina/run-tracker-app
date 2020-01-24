@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { addRun, clearList, deleteRun } from '../../actions/runs';
 import { connect } from 'react-redux';
@@ -7,7 +8,6 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
 import AddRunModal from './AddRunModal';
 import { styles } from './UserRunsListStyles';
@@ -30,13 +30,32 @@ class UserRunsList extends PureComponent {
     const { classes, user } = this.props;
 
     return (
-      <Card className={classes.card}>
-        <Typography className={classes.welcome} variant="h5">{`Hello ${user.firstName}`}</Typography>
+      <div className={classes.root}>
+        <Typography className={classes.welcome} variant="h5">
+          {`Hi ${user.firstName}`}
+        </Typography>
 
         <div className={classes.listContainer}>
           <div className={classes.positionBtns}>
             <AddRunModal onSubmit={this.onSubmit} />
-            <Button onClick={this.clearList} variant="contained" size="medium" color="secondary" className={classes.button} >
+
+            <Button 
+              component={Link} to="/users" 
+              variant="contained" 
+              size="medium" 
+              color="primary"
+              className={classes.button} 
+            >
+              Back
+            </Button>
+
+            <Button 
+              onClick={this.clearList} 
+              variant="contained" 
+              size="medium" 
+              color="secondary" 
+              className={classes.button} 
+            >
               Clear All
             </Button>
           </div>
@@ -47,11 +66,25 @@ class UserRunsList extends PureComponent {
               <List>
                 {user.runs.map((entry, runIndex) => (
                   <ListItem key={runIndex} className={classes.liItem}>
-                    <Typography variant="body1" className={classes.liText}>
-                      {`${entry.distance} Km : ${entry.duration} min : ${entry.date.getDate()}.${entry.date.getMonth() + 1}.${entry.date.getFullYear()}`}
-                    </Typography>
+                    <div className={classes.leftSideLi}>
+                      <Typography variant="body1" className={classes.liText}>
+                        {`
+                          ${entry.date.getDate()} -
+                          ${entry.date.getMonth() + 1} -
+                          ${entry.date.getFullYear()}:
+                        `}
+                      </Typography>
+                      <Typography variant="body1" className={classes.liText}>
+                        {`${entry.distance} Km in ${entry.duration} min`}
+                      </Typography> 
+                    </div>
 
-                    <Button onClick={() => this.deleteRun(runIndex)} variant="contained" size="small" color="primary">
+                    <Button 
+                      onClick={() => this.deleteRun(runIndex)} 
+                      variant="contained" 
+                      size="medium" 
+                      color="primary"
+                    >
                       Delete
                     </Button>
                   </ListItem>
@@ -60,7 +93,7 @@ class UserRunsList extends PureComponent {
               : null}
           </div>
         </div>
-      </Card>
+      </div>
     );
   }
 }

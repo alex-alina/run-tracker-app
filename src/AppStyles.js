@@ -5,13 +5,13 @@ export const theme = createMuiTheme({
     primary: {
       main: '#ffd24c',
       light: '#ffe187',
-      dark: '#c68400',
+      dark: '#d69718',
       contrastText: '#000',
     },
     secondary: {
       main: '#0277bd',
       light: '#58a5ef',
-      dark: '#004c8b',
+      dark: '#0e65ad',
       contrastText: '#fff',
     },
   },
