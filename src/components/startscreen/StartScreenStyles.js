@@ -2,15 +2,7 @@ export const styles = theme => ({
   card: {
     width: '100%',
     height: '100vh',
-    // margin: 'auto',
-    // padding: theme.spacing.unit * 1,
-    // [theme.breakpoints.up('md')]: {
-    //   maxWidth: '500',
-    //   width: '40%',
-    //   height: 'auto',
-    //   margin: '2% auto',
-    //   padding: theme.spacing.unit * 1,
-    // },
+    overflow: 'auto',
   },
 
   positionMedia: {
@@ -20,17 +12,31 @@ export const styles = theme => ({
     backgroundColor: theme.palette.primary.main,
     [theme.breakpoints.up('lg')]: {
       padding: theme.spacing.unit * 10,
-
     },
   },
 
   media: {
     display: 'block',
     width: '25vw',
-    height: '40vh',
+    height: '30vh',
     paddingRight: theme.spacing.unit * 1,
     objectFit: 'contain',
     verticalAlign: 'center',
+  },
+  
+  appTitle: {
+    margin: '1.5vmax auto',
+  },
+
+  introParagraph:{
+    width: '90%',
+    margin: '0 auto',
+    [theme.breakpoints.up('sm')]: {
+      width: '80%',
+    },
+    [theme.breakpoints.up('lg')]: {
+      width: '40%',
+    },
   },
 
   positionStartBtn: {

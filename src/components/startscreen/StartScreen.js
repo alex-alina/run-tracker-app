@@ -9,12 +9,14 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import runner from '../../assets/images/Runner.png';
 import { styles } from './StartScreenStyles';
+import homePageText from '../../utils/staticContent';
 
 class StartScreen extends PureComponent {
   renderLink = itemProps => <Link to={this.props.to} {...itemProps} />;
 
   render() {
     const { classes } = this.props;
+    const { appTitle, appDescription } = homePageText;
 
     return (
       <Card className={classes.card}>
@@ -40,14 +42,12 @@ class StartScreen extends PureComponent {
         </div>
 
         <CardContent>
-          <Typography variant="h5" component="h2">
-            Running Tracker App
+          <Typography variant="h5" component="h2" className={classes.appTitle}>
+            {appTitle}
           </Typography>
-          <Typography variant="body1" component="p">
-            Running together is fun! Bring your friends or join one of our running groups.
-          </Typography>
-          <Typography variant="body1" component="p">
-            All group members can set a goal to run towards to (pun intended), add the date, length and duration of each run and check up the stats of other group members with our running tracking app.
+          
+          <Typography variant="body1" className={classes.introParagraph}>
+            {appDescription}
           </Typography>
         </CardContent>
 
