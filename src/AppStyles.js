@@ -4,7 +4,7 @@ export const theme = createMuiTheme({
   palette: {
     primary: {
       main: '#ffd24c',
-      light: '#ffe54c',
+      light: '#ffe187',
       dark: '#c68400',
       contrastText: '#000',
     },
@@ -49,12 +49,19 @@ export const theme = createMuiTheme({
       },
     },
 
+    MuiList: {
+      padding: {
+        paddingTop: 0,
+        paddingBottom: 0,
+      }
+    },
+
     MuiAvatar: {
       root: {
-        width: '50px',
-        height: '50px',
+        width: '30px',
+        height: '30px',
         backgroundColor: '#fff',
-        marginRight: '20px',
+        marginRight: '10px',
       },
     },
   }

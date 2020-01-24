@@ -2,13 +2,11 @@ import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import classNames from 'classnames';
 import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
-import Card from '@material-ui/core/Card';
 import { styles } from './UsersListStyles';
 import { findMax } from '../../helpers/findMax';
 
@@ -18,31 +16,32 @@ class UsersList extends PureComponent {
   render() {
     const { classes, users } = this.props;
     return (
-      <Card className={classes.card}>
-        <List>
-          {users.map((user) => (
-            <ListItem key={user.id} className={classes.userLi}>
-              <div className={classes.spaceListItem}>
+      <List className={classes.list}>
+        {users.map((user) => (
+          <ListItem key={user.id} className={classes.userLi}>
+            <Link to={`/users/${user.id}`} className={classes.link}>
+              <div className={classes.leftSideLi}>
                 <ListItemAvatar>
-                  <Avatar alt="Avatar photo" src={user.avatar} />
+                  <Avatar alt="Avatar photo" src={user.avatar} className={classes.avatar}/>
                 </ListItemAvatar>
 
                 <Typography variant="body1" className={classes.liText}>
-                  <Link to={`/users/${user.id}`} className={classes.link}>
-                    {`${user.firstName} ${user.lastName}`}
-                  </Link>
+                  {`${user.firstName} ${user.lastName}:`}
                 </Typography>
               </div>
 
-              <div className={classes.placeRight}>
-                <Typography variant="body1" className={classNames(classes.liText, classes.spaceTopScore)}>
-                  Longest run: {findMax(user.runs, "distance")} km
+              <div className={classes.rightSideLi}>
+                <Typography 
+                  className={classes.liTextRight}
+                  variant="body1" 
+                >
+                  longest run = {findMax(user.runs, "distance")} km
                 </Typography>
               </div>
-            </ListItem>
-          ))}
-        </List>
-      </Card>
+            </Link>
+          </ListItem>
+        ))}
+      </List>
     );
   }
 }

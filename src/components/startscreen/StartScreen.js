@@ -9,7 +9,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { styles } from './StartScreenStyles';
 import homePageText from '../../utils/staticContent';
-import RunnerImg from '../RunnerImg/RunnerImg';
+import RunnerImg from '../runnerImg/RunnerImg';
 
 class StartScreen extends PureComponent {
   renderLink = itemProps => <Link to={this.props.to} {...itemProps} />;
