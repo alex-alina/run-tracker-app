@@ -5,6 +5,7 @@ export const styles = theme => ({
     overflow: 'auto',
     backgroundColor: '#fff',
   },
+
   groupCover: {
     display: 'block',
     position: 'fixed',
@@ -14,5 +15,4 @@ export const styles = theme => ({
     objectPosition: 'center',
     zIndex: 1,
   },
- 
 });

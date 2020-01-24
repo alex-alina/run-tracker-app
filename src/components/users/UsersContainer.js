@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { styles } from './UsersContainerStyles';
 import UsersList from './UsersList';
 import runTogether from '../../assets/images/runTogether.jpg';
+
 class UsersContainer extends PureComponent {
   componentDidMount() {
     if (this.props.users === null) this.props.loadUsers();
@@ -13,6 +14,7 @@ class UsersContainer extends PureComponent {
  
   render() {
     const { classes } = this.props;
+    
     if (!this.props.users) return 'Loading users ...';
     
     return (

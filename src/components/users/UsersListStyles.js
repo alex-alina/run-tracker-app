@@ -1,11 +1,10 @@
 export const styles = theme => ({
   list: {
     width: '100%',
+    margin: '0 auto',
     top: '45vh',
     zIndex: '6',
     backgroundColor: 'inherit',
-    margin: '0 auto',
-    // padding: theme.spacing.unit * 1,
     [theme.breakpoints.up('sm')]: {
       padding: theme.spacing.unit * 3,
       width: '60%',
@@ -24,8 +23,7 @@ export const styles = theme => ({
     display: 'flex',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    margin: '2vh auto',
-   
+    margin: '1.5vh auto',
   },
   
   link: {
@@ -38,7 +36,6 @@ export const styles = theme => ({
     },
     [theme.breakpoints.up('lg')]: {
       justifyContent: 'space-around',
-
     },
   },
 

@@ -2,13 +2,13 @@ import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import { styles } from './UsersListStyles';
+import { findMax } from '../../helpers/findMax';
 import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
-import { styles } from './UsersListStyles';
-import { findMax } from '../../helpers/findMax';
 
 class UsersList extends PureComponent {
   renderLink = itemProps => <Link to={this.props.to} {...itemProps} />;
@@ -22,7 +22,11 @@ class UsersList extends PureComponent {
             <Link to={`/users/${user.id}`} className={classes.link}>
               <div className={classes.leftSideLi}>
                 <ListItemAvatar>
-                  <Avatar alt="Avatar photo" src={user.avatar} className={classes.avatar}/>
+                  <Avatar 
+                    alt="Avatar photo" 
+                    src={user.avatar} 
+                    className={classes.avatar}
+                  />
                 </ListItemAvatar>
 
                 <Typography variant="body1" className={classes.liText}>
