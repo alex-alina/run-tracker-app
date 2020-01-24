@@ -7,9 +7,9 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import runner from '../../assets/images/Runner.png';
 import { styles } from './StartScreenStyles';
 import homePageText from '../../utils/staticContent';
+import RunnerImg from '../RunnerImg/RunnerImg';
 
 class StartScreen extends PureComponent {
   renderLink = itemProps => <Link to={this.props.to} {...itemProps} />;
@@ -21,24 +21,9 @@ class StartScreen extends PureComponent {
     return (
       <Card className={classes.card}>
         <div className={classes.positionMedia}>
-          <img
-            className={classes.media}
-            src={runner}
-            title="Runner"
-            alt="Blue runner clip art"
-          />
-          <img
-            className={classes.media}
-            src={runner}
-            title="Runner"
-            alt="Blue runner clip art"
-          />
-          <img
-            className={classes.media}
-            src={runner}
-            title="Runner"
-            alt="Blue runner clip art"
-          />
+          <RunnerImg />
+          <RunnerImg />
+          <RunnerImg />
         </div>
 
         <CardContent>
