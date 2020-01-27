@@ -29,7 +29,7 @@ export const styles = theme => ({
   link: {
     width: '100%',
     display: 'flex',
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
     alignItems: 'center',
     [theme.breakpoints.up('sm')]: {
       justifyContent: 'space-between',

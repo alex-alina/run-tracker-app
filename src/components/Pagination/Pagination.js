@@ -16,7 +16,7 @@ const Pagination = (props) => {
   }
 
   return (
-    <nav className={classes.pageNavigation}>
+    <nav>
       <List className={classes.pagination}>
         <ListItem className={classes.pagesLi}>pages: </ListItem>
         {pageNumbers.map(number => (

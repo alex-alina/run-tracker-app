@@ -9,9 +9,13 @@ export const styles = theme => ({
 
   pagesLi: {
     width: '70px',
-    marginRight: theme.spacing.unit * 2,
+    marginRight: theme.spacing.unit * 1,
     paddingLeft: theme.spacing.unit * 3,
     fontSize: 'calc(1rem + 0.5vw)',
+    [theme.breakpoints.up('md')]: {
+      marginRight: theme.spacing.unit * 3,
+
+    },
   },
 
   pageLink: {
