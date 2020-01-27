@@ -35,6 +35,7 @@ export const theme = createMuiTheme({
       contained: {
         borderRadius: '50px',
       },
+      
     },
 
     MuiListItem: {

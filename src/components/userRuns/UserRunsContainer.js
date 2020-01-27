@@ -5,8 +5,10 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from './UserRunsContainerStyles';
 import { Grid } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 import UserRunsList from './UserRunsList';
 import runningShoes from '../../assets/images/runningShoes.jpg';
+import LineGraph from '../LineGraph/LineGraph';
 
 class UserRunsContainer extends PureComponent {
   componentDidMount() {
@@ -22,14 +24,33 @@ class UserRunsContainer extends PureComponent {
     
     return (
       <Grid container spacing={0} component="div" className={classes.root} >
-        <Grid item xs={12} lg={6} className={classes.firstGridItem}>
+        <Grid item xs={12} lg={12} className={classes.firstGridItem}>
           <img
             className={classes.profileImg}
             src={runningShoes}
             title="Running Shoes"
             alt="Hand holding a pair of Nike running shoes"
           />
+
+          <Typography className={classes.welcome} variant="h5">
+            {`Hi ${user.firstName}`}
+          </Typography>
         </Grid>
+        
+        <Grid item xs={12} lg={6} className={classes.secondGridItem}>
+          <div className={classes.chartContainer}>
+            <Typography className={classes.title} variant="h5">
+              Your progress overview
+            </Typography>
+          
+            <LineGraph
+              color="#4287f5"
+              name={user.name}
+              runs={user.runs}
+            />
+          </div>
+        </Grid>
+
         <Grid item xs={12} lg={6} className={classes.secondGridItem}>
           <UserRunsList user={user} />
         </Grid>

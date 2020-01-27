@@ -11,7 +11,14 @@ const reducer = (state = initialState, action = {}) => {
 
     // populate user runs with dummy data for testing
     const usersWithRuns = users.map(user => {
-      user.runs.push(assignRandomRun(dummyData), assignRandomRun(dummyData));
+      user.runs.push(
+        assignRandomRun(dummyData), 
+        assignRandomRun(dummyData), 
+        assignRandomRun(dummyData), 
+        assignRandomRun(dummyData),
+        assignRandomRun(dummyData),
+        assignRandomRun(dummyData),
+        assignRandomRun(dummyData));
       return user;
     });
     return usersWithRuns;

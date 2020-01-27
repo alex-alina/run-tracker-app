@@ -30,7 +30,7 @@ class UsersList extends PureComponent {
                 </ListItemAvatar>
 
                 <Typography variant="body1" className={classes.liText}>
-                  {`${user.firstName} ${user.lastName}:`}
+                  {`${user.firstName} ${user.lastName}`}
                 </Typography>
               </div>
 

@@ -2,20 +2,12 @@ export const styles = theme => ({
   root: {
     width: '100%',
     margin: 'auto',
-    paddingTop: theme.spacing.unit * 1,
+    paddingTop: theme.spacing.unit * 4,
     paddingBottom: theme.spacing.unit * 1,
     overflow: 'auto',
     [theme.breakpoints.up('lg')]: {
       margin: '2% auto',
-      padding: theme.spacing.unit * 5,
-    },
-  },
- 
-  welcome: {
-    marginTop: theme.spacing.unit * 1,
-    marginBottom: theme.spacing.unit * 2,
-    [theme.breakpoints.up('lg')]: {
-      marginBottom: theme.spacing.unit * 6,    
+      paddingTop: 0,
     },
   },
 
@@ -25,6 +17,8 @@ export const styles = theme => ({
     display: 'flex',
     justifyContent: 'space-between',
     [theme.breakpoints.up('lg')]: {
+      paddingTop: theme.spacing.unit * 1.5,
+      paddingBottom: theme.spacing.unit * 2.5,
       width: '80%',
     },
   },
@@ -32,12 +26,15 @@ export const styles = theme => ({
   runsList: {
     width: '95%',
     height: 'auto',
-    minHeight:'200px',
+    minHeight:'360px',
     margin: 'auto',
     marginTop: theme.spacing.unit * 3,
-    padding: theme.spacing.unit * 1,
     borderRadius: '4px',
     backgroundColor: theme.palette.secondary.light,
+    [theme.breakpoints.up('sm')]: {
+      padding: theme.spacing.unit * 1,
+
+    },
     [theme.breakpoints.up('lg')]: {
       width: '85%',
     },
@@ -47,9 +44,12 @@ export const styles = theme => ({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: theme.spacing.unit * 2,
-    [theme.breakpoints.up('lg')]: {
-      padding: theme.spacing.unit * 2,
+    marginTop: theme.spacing.unit * 1,
+    paddingLeft: theme.spacing.unit * 2,
+    paddingRight: theme.spacing.unit * 2,
+    [theme.breakpoints.up('sm')]: {
+      paddingLeft: theme.spacing.unit * 3,
+      paddingRight: theme.spacing.unit * 3,    
     },
   },
 
@@ -59,15 +59,31 @@ export const styles = theme => ({
     justifyContent: 'flex-start',
     [theme.breakpoints.up('sm')]: {
       flexDirection: 'row',
-      justifyContent: 'space-around',
+      justifyContent: 'space-between',
+    },
+  },
+
+  rightSideLi: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    width: '45%',
+    [theme.breakpoints.up('sm')]: {
+      width: '25%',
     },
   },
   
+  btn: {
+    marginRight: '15px',
+    [theme.breakpoints.up('sm')]: {
+      marginRight: '30px',
+    },
+  },
+
   liText: {
     color: '#fff',
     fontSize: 'calc(1rem + 0.5vw)',
-    [theme.breakpoints.up('lg')]: {
-      marginLeft: theme.spacing.unit * 3,
+    [theme.breakpoints.up('sm')]: {
+      marginRight: '30px',
     },
   }
 });
