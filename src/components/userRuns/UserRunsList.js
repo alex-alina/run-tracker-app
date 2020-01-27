@@ -31,10 +31,6 @@ class UserRunsList extends PureComponent {
 
     return (
       <div className={classes.root}>
-        <Typography className={classes.welcome} variant="h5">
-          {`Hi ${user.firstName}`}
-        </Typography>
-
         <div className={classes.listContainer}>
           <div className={classes.positionBtns}>
             <AddRunModal onSubmit={this.onSubmit} />
@@ -79,14 +75,27 @@ class UserRunsList extends PureComponent {
                       </Typography> 
                     </div>
 
-                    <Button 
-                      onClick={() => this.deleteRun(runIndex)} 
-                      variant="contained" 
-                      size="medium" 
-                      color="primary"
-                    >
-                      Delete
-                    </Button>
+                    <div className={classes.rightSideLi}>
+                      <Button 
+                        onClick={() => this.deleteRun(runIndex)} 
+                        variant="contained" 
+                        size="small" 
+                        color="primary"
+                        className={classes.btn}
+                      >
+                        Update
+                      </Button>
+
+                      <Button 
+                        onClick={() => this.deleteRun(runIndex)} 
+                        variant="contained" 
+                        size="small" 
+                        color="primary"
+                      >
+                        Delete
+                      </Button>
+                    </div>
+                    
                   </ListItem>
                 ))}
               </List>

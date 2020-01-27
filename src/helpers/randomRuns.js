@@ -23,6 +23,16 @@ export const dummyData = [
     distance: 20, 
     duration: 130,
     date: new Date('10-06-2018')
+  },
+  {
+    distance: 15, 
+    duration: 65,
+    date: new Date('10-02-2020')
+  },
+  {
+    distance: 7, 
+    duration: 40,
+    date: new Date('08-03-2020')
   }
 ];
 
