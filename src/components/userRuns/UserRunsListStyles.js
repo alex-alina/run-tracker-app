@@ -26,7 +26,7 @@ export const styles = theme => ({
   runsList: {
     width: '95%',
     height: 'auto',
-    minHeight:'200px',
+    minHeight:'360px',
     margin: 'auto',
     marginTop: theme.spacing.unit * 3,
     borderRadius: '4px',
@@ -59,7 +59,7 @@ export const styles = theme => ({
     justifyContent: 'flex-start',
     [theme.breakpoints.up('sm')]: {
       flexDirection: 'row',
-      justifyContent: 'space-around',
+      justifyContent: 'space-between',
     },
   },
 
@@ -82,5 +82,8 @@ export const styles = theme => ({
   liText: {
     color: '#fff',
     fontSize: 'calc(1rem + 0.5vw)',
+    [theme.breakpoints.up('sm')]: {
+      marginRight: '30px',
+    },
   }
 });

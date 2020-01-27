@@ -16,6 +16,8 @@ const reducer = (state = initialState, action = {}) => {
         assignRandomRun(dummyData), 
         assignRandomRun(dummyData), 
         assignRandomRun(dummyData),
+        assignRandomRun(dummyData),
+        assignRandomRun(dummyData),
         assignRandomRun(dummyData));
       return user;
     });

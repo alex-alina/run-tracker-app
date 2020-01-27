@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import runner from '../../assets/images/Runner.png';
 import { styles } from './RunnerImgStyles';
 
-function RunnerImg(props) {
+const RunnerImg = (props) => {
   const { classes } = props;
   return (
     <img
@@ -14,7 +14,7 @@ function RunnerImg(props) {
       alt="Blue runner clip art"
     />
   );
-}
+};
 
 RunnerImg.propTypes = {
   classes: PropTypes.object.isRequired,
