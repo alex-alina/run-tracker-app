@@ -100,11 +100,12 @@ class UserRunsList extends PureComponent {
 
                     <div className={classes.rightSideLi}>
                       <Button 
-                        onClick={() => this.deleteRun(runIndex)} 
+                        onClick={() => this.updateRun(runIndex)} 
                         variant="contained" 
                         size="small" 
                         color="primary"
                         className={classes.btn}
+                        disabled
                       >
                         Update
                       </Button>
