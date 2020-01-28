@@ -10,10 +10,10 @@ This is the client for a Running Tracker App. When users click **Go to group sta
 
 When a user clicks on their name, they are sent to their Runs' Status page, where they can add or delete entries.
 
-The goal of this project was to build a responsive SPA to track users runs taken at different dates and display them in a list and a graph.
+The goal of this project was to build a responsive SPA to track users runs taken at different dates and display them in a list and a graph. The project's directories are structured by responsibility.
 
 **Project's status: WIP**
-
+ 
 ## Tech stack
 
 * React

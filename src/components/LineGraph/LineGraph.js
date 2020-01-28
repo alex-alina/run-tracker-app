@@ -15,12 +15,12 @@ class LineGraph extends PureComponent {
   }
 
   buildChart = () => {
-    const myCharteRef = this.chartRef.current.getContext("2d");
+    const myCanvas = this.chartRef.current.getContext("2d");
     const { runs } = this.props;
     
     if (typeof myLineChart !== "undefined") myLineChart.destroy();
 
-    new Chart(myCharteRef, {
+    myLineChart = new Chart(myCanvas, {
       type: 'line',
       options: {
         scales: {
@@ -40,7 +40,7 @@ class LineGraph extends PureComponent {
             {
               ticks: {
                 min: 0,
-                max: 140,
+                max: 160,
                 // replace max with goal plus 10km
                 // max: findMax(runs, "distance") 
               },
@@ -63,7 +63,7 @@ class LineGraph extends PureComponent {
             tension: 0.2,
           },
           {
-            label: 'Time',
+            label: 'Time (min)',
             data: runs.map(run => run.duration),
             backgroundColor: '#ffd24c',
             borderColor: '#ffd24c',

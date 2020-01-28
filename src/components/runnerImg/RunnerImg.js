@@ -10,7 +10,6 @@ const RunnerImg = (props) => {
     <img
       className={classes.media}
       src={runner}
-      title="Runner"
       alt="Blue runner clip art"
     />
   );

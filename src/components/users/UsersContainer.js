@@ -22,7 +22,6 @@ class UsersContainer extends PureComponent {
         <img
           className={classes.groupCover}
           src={runTogether}
-          title="Runners"
           alt="Two people running on a mountain track"
         />
         <UsersList users={this.props.users} />

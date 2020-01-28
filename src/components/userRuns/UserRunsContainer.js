@@ -17,7 +17,7 @@ class UserRunsContainer extends PureComponent {
   }
 
   render() {
-    const { classes } = this.props;
+    const { classes, userRuns } = this.props;
 
     if (!this.props.userId || !this.props.users) return 'Loading your data...';
     
@@ -29,7 +29,6 @@ class UserRunsContainer extends PureComponent {
           <img
             className={classes.profileImg}
             src={runningShoes}
-            title="Running Shoes"
             alt="Hand holding a pair of Nike running shoes"
           />
 
@@ -66,5 +65,7 @@ UserRunsContainer.propTypes = {
 const mapStateToProps = state => ({
   userId: state.userId,
   users: state.users,
+  // userRuns: state.users ? state.users.filter(user => user.id === state.userId)[0].runs : null,
+
 });
 export default connect(mapStateToProps, { loadUser })(withStyles(styles)(UserRunsContainer));
