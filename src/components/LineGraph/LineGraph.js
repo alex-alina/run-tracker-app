@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import Chart from "chart.js";
-import { findMax } from '../../helpers/findMax';
 import { formatDateToDDMMMY } from '../../helpers/dates';
 
 let myLineChart;
@@ -17,7 +16,7 @@ class LineGraph extends PureComponent {
 
   buildChart = () => {
     const myCharteRef = this.chartRef.current.getContext("2d");
-    const { runs, color } = this.props;
+    const { runs } = this.props;
     
     if (typeof myLineChart !== "undefined") myLineChart.destroy();
 
@@ -35,7 +34,6 @@ class LineGraph extends PureComponent {
                 display: false,
                 drawBorder: false
               }
-
             }
           ],
           yAxes: [
@@ -45,15 +43,12 @@ class LineGraph extends PureComponent {
                 max: 140,
                 // replace max with goal plus 10km
                 // max: findMax(runs, "distance") 
-
               },
             }
           ]
         },
         responsive: true,
-        // maintainAspectRatio: false,
       },
-      
       data: {
         labels: runs.map(run => formatDateToDDMMMY(run.date)),
         datasets: [
@@ -67,7 +62,6 @@ class LineGraph extends PureComponent {
             borderWidth: 2,
             tension: 0.2,
           },
-
           {
             label: 'Time',
             data: runs.map(run => run.duration),
@@ -80,20 +74,23 @@ class LineGraph extends PureComponent {
           },
         ]
       }
-      // 
     });
   }
 
   render() {
     return (
       <div>
-        <canvas  id="myRunsChart" ref={this.chartRef} aria-label="Line chart that shows km run for each running session" role="img" >
-          <p>Your browser does not support the canvas element.</p>
+        <canvas  
+          id="myRunsChart" 
+          ref={this.chartRef} 
+          aria-label="Line chart that shows km run for each running session" 
+          role="img" 
+        >
+          <p>We can't display the graph. Your browser does not support the canvas element.</p>
         </canvas>
       </div>
     );
   }
 };
-
 
 export default LineGraph;

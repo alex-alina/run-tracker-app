@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { addRun, clearList, deleteRun } from '../../actions/runs';
 import { connect } from 'react-redux';
-import { sortDesc } from '../../helpers/sortDesc';
+// import { sortDesc } from '../../helpers/sortDesc';
 import { formatDateToDDMMMYYY } from '../../helpers/dates';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -16,14 +16,16 @@ import { styles } from './UserRunsListStyles';
 
 class UserRunsList extends PureComponent {
   state = {
-    runsList: this.props.user.runs,
+    runsList: this.props.myRuns,
     currentPage: 1,
     runsPerPage: 5,
-    // isPageSelected: false,
   }
 
   onSubmit = (distance, duration, date) => {
     this.props.addRun(this.props.userId, distance, duration, new Date(date));
+    this.setState({
+      runsList: this.props.myRuns,
+    });
   }
 
   clearList = () => {
@@ -35,13 +37,15 @@ class UserRunsList extends PureComponent {
   }
 
   render() {
-    const { classes, user } = this.props;
-    const { runsList, currentPage, runsPerPage, isPageSelected } = this.state;
+    if (!this.props.myRuns) return 'Loading your runs...';
+  
+    const { classes, myRuns } = this.props;
+    const { currentPage, runsPerPage } = this.state;
 
     // Get current runs
     const indexOfLastRun = currentPage * runsPerPage;
     const indexOfFirstRun = indexOfLastRun - runsPerPage;
-    const currentRuns = user.runs.slice(indexOfFirstRun, indexOfLastRun);
+    const currentRuns = myRuns.slice(indexOfFirstRun, indexOfLastRun);
 
     // Change page
     const paginate = (pageNumber) => {
@@ -49,7 +53,7 @@ class UserRunsList extends PureComponent {
         currentPage: pageNumber,
       });
     };
-    
+
     return (
       <div className={classes.root}>
         <div className={classes.listContainer}>
@@ -67,6 +71,7 @@ class UserRunsList extends PureComponent {
             </Button>
 
             <Button 
+              onClick={() => this.clearList()} 
               onClick={this.clearList} 
               variant="contained" 
               size="medium" 
@@ -78,8 +83,8 @@ class UserRunsList extends PureComponent {
           </div>
 
           <div className={classes.runsList}>
-            {sortDesc(user.runs)}
-            {user.runs && currentRuns ?
+            {/* {sortDesc(myRuns)} */}
+            {myRuns && currentRuns ?
               <List>
                 {currentRuns.map((entry, runIndex) => (
                   <ListItem key={runIndex} className={classes.liItem}>
@@ -113,14 +118,14 @@ class UserRunsList extends PureComponent {
                         Delete
                       </Button>
                     </div>
-                    
                   </ListItem>
                 ))}
               </List>
               : null}
+
             <Pagination  
               runsPerPage={runsPerPage} 
-              totalRuns={runsList.length} 
+              totalRuns={myRuns.length} 
               paginate={paginate} 
             />
           </div>
@@ -136,6 +141,7 @@ UserRunsList.propTypes = {
 
 const mapStateToProps = state => ({
   userId: state.userId,
+  myRuns: state.users ? state.users.filter(user => user.id === state.userId)[0].runs : null,
 });
 
 export default connect(mapStateToProps, { addRun, clearList, deleteRun })(withStyles(styles)(UserRunsList));

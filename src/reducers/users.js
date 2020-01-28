@@ -45,9 +45,10 @@ const reducer = (state = initialState, action = {}) => {
     const userIdForClear = action.payload;
     const clearUserRuns = state.map(user => {
       if(user.id === userIdForClear) {
-        user.runs.length = 0;
+        // user.runs.length = 0;
         return {
           ...user,
+          runs: [],
         };
       } else {
         return user;
@@ -58,6 +59,7 @@ const reducer = (state = initialState, action = {}) => {
   case DELETE_RUN:
     const index = action.payload.runIndex;
     const userIdForDelete = action.payload.userId;
+
     const updateUsers = state.map(user => {
       if(user.id === userIdForDelete) {
         const updateRuns = user.runs.filter((run, runIndex) => runIndex !== index);

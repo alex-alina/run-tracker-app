@@ -20,8 +20,9 @@ class UserRunsContainer extends PureComponent {
     const { classes } = this.props;
 
     if (!this.props.userId || !this.props.users) return 'Loading your data...';
-    const user = this.props.users.filter(user => user.id === this.props.userId)[0];
     
+    const user = this.props.users.filter(user => user.id === this.props.userId)[0];
+
     return (
       <Grid container spacing={0} component="div" className={classes.root} >
         <Grid item xs={12} lg={12} className={classes.firstGridItem}>
@@ -44,7 +45,6 @@ class UserRunsContainer extends PureComponent {
             </Typography>
           
             <LineGraph
-              color="#4287f5"
               name={user.name}
               runs={user.runs}
             />
@@ -52,7 +52,7 @@ class UserRunsContainer extends PureComponent {
         </Grid>
 
         <Grid item xs={12} lg={6} className={classes.secondGridItem}>
-          <UserRunsList user={user} />
+          <UserRunsList user={user}/>
         </Grid>
       </Grid>
     );
@@ -67,5 +67,4 @@ const mapStateToProps = state => ({
   userId: state.userId,
   users: state.users,
 });
-
 export default connect(mapStateToProps, { loadUser })(withStyles(styles)(UserRunsContainer));

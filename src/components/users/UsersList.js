@@ -11,10 +11,9 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 
 class UsersList extends PureComponent {
-  renderLink = itemProps => <Link to={this.props.to} {...itemProps} />;
-
   render() {
     const { classes, users } = this.props;
+
     return (
       <List className={classes.list}>
         {users.map((user) => (

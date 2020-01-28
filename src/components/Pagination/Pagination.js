@@ -7,7 +7,6 @@ import { List, ListItem } from '@material-ui/core';
 
 const Pagination = (props) => {
   const { runsPerPage, totalRuns, paginate, classes } = props;
-
   const pageNumbers = [];
   const lastPage = Math.ceil(totalRuns / runsPerPage);
 
@@ -18,10 +17,15 @@ const Pagination = (props) => {
   return (
     <nav>
       <List className={classes.pagination}>
-        <ListItem className={classes.pagesLi}>pages: </ListItem>
+        {totalRuns !== 0 ? 
+          <ListItem className={classes.pagesLi}>pages: </ListItem> 
+          : null}
         {pageNumbers.map(number => (
-          <ListItem key={number} className={classNames(classes.pageLink, classes.underline)}>
-            <a onClick={() => paginate(number)}>
+          <ListItem 
+            key={number} 
+            className={classNames(classes.pageLink, classes.underline)}
+          >
+            <a  onClick={() => paginate(number)}>
               {number}
             </a>
           </ListItem>

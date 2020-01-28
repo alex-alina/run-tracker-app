@@ -24,6 +24,9 @@ export const styles = theme => ({
   },
   
   runsList: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
     width: '95%',
     height: 'auto',
     minHeight:'360px',
@@ -32,7 +35,7 @@ export const styles = theme => ({
     borderRadius: '4px',
     backgroundColor: theme.palette.secondary.light,
     [theme.breakpoints.up('sm')]: {
-      padding: theme.spacing.unit * 1,
+      padding: theme.spacing.unit * 2,
 
     },
     [theme.breakpoints.up('lg')]: {

@@ -12,8 +12,6 @@ import homePageText from '../../utils/staticContent';
 import RunnerImg from '../runnerImg/RunnerImg';
 
 class StartScreen extends PureComponent {
-  renderLink = itemProps => <Link to={this.props.to} {...itemProps} />;
-
   render() {
     const { classes } = this.props;
     const { appTitle, appDescription } = homePageText;
