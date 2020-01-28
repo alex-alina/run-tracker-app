@@ -43,10 +43,15 @@ The goal of this project was to build a SPA to track users runs taken at differe
 
 ## Future development and improvements
 
-* Display a graph showing the progress
-* Use pagination on the lists
-* Make app responsive 
+* Show which page that displays runs is currently selected
+* Display runs in ascending order inside the chart
+* Display runs in descending order inside the list
+* Update and refactor project structure (components, views, redux tree, naming)
 * Add unit tests
+* Fetch users' data from a free mock api (ex. Faker or reqres.in) & drop the JSON-server
+* Add back to start screen link/btn
+* Add running goal and functionality to congratulate the user the first time they reach it
+* Add update old run functionality 
 
 ## License
 
