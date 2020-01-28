@@ -6,11 +6,11 @@
 
 ## Description
 
-This is the client for a Run Tracker App. When users click **Start** they are sent to a **Users' List**.
+This is the client for a Running Tracker App. When users click **Go to group stats** they are sent to a **Users' List** that displays each user's longest run.
 
 When a user clicks on their name, they are sent to their Runs' Status page, where they can add or delete entries.
 
-The goal of this project was to build a SPA to track users runs taken at different dates and display them in a list and a graph.
+The goal of this project was to build a responsive SPA to track users runs taken at different dates and display them in a list and a graph.
 
 **Project's status: WIP**
 
@@ -20,14 +20,18 @@ The goal of this project was to build a SPA to track users runs taken at differe
 * Redux
 * Material-UI
 * JavaScript
+* Chart.js
+* Moment.js
 * CSS
 
 ## Features
 
-* Start screen and Start button
+* Start screen and Go to group stats button
 * Users' list screen, displaying longest distance run for each user
 * User's runs tracking screen
+* Line Graph that displays the progresion of runs' distances and times
 * Add run, Delete run and Clear list buttons
+* Back button that takes you back to the users' list
 
 ## Setup
 
